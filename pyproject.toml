@@ -1,13 +1,18 @@
 [project]
 name = "drivedeploy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Server-less distribution of frozen Python tools over a shared network drive."
 readme = "README.md"
 authors = [
     { name = "Sterling Collins", email = "sterlingcollins@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "packaging>=26.2",
+]
+
+[project.optional-dependencies]
+typer = ["typer>=0.12"]
 
 [project.scripts]
 drivedeploy = "drivedeploy:main"
@@ -15,3 +20,15 @@ drivedeploy = "drivedeploy:main"
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.15.20",
+]

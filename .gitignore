@@ -203,6 +203,9 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+# drivedeploy generated client config (regenerate before freezing; D7a=B)
+_drivedeploy_embed.py
+
 # Ruff stuff:
 .ruff_cache/
 
